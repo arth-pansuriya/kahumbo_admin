@@ -1,0 +1,28 @@
+await FirebaseFirestore.instance
+                                              .collection("category")
+                                              .doc(widget.cid)
+                                              .collection(widget.collection)
+                                              .doc(widget.pid)
+                                              .update({
+                                            'pid': widget.pid,
+                                            'pname': 'bjbj',
+                                            'price': 50,
+                                          }).whenComplete(() {
+                                            Fluttertoast.showToast(
+                                                msg:
+                                                    "Product Updated Successfully !");
+                                            Navigator.of(context).pop();
+                                          });
+                        
+
+
+
+                        FirebaseFirestore.instance
+                              .collection("category")
+                              .doc(widget.cid)
+                              .collection(widget.collection)
+                              .doc(widget.pid)
+                              .update({
+                            'pname': 'abc',
+                            'price': 40
+                          }).whenComplete(() => print('done ya'));
